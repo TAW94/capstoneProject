@@ -47,9 +47,7 @@ p {
   max-width: 100%;
 }
 /* removes the mobile menu and pictures when in desktop/default version */
-.mobile {
-  display: none;
-}
+
 
 /* header ------------------------*/
 
@@ -59,6 +57,39 @@ header {
   background-color: white;
   width: 100%;
 }
+
+header .mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 780px) {
+
+  header .desktop {
+    display: none;
+  }
+
+  header .mobile {
+    display: flex;
+    width: 100%;
+  }
+
+  header .mobile ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+}
+
+  .mobile ul li a {
+    display: flex;
+  }
+
+  header .mobile img {
+    height: 2.5rem;
+  }
+
+} /* end media query ----- */
 
 header .content {
   display: flex;
@@ -83,6 +114,16 @@ header .logo {
   color: #a6a6a6;
   font-size: 1.5rem;
   letter-spacing: 0.05rem;
+}
+
+@media only screen and (max-width: 780px) {
+  #academyTitle {
+    display: none;
+  }
+
+  header .logo {
+    display: none;
+  }
 }
 
 #colmar {
@@ -116,13 +157,37 @@ nav ul li {
   /*border: 1px solid black;*/
 }
 
-
-
-
 /* banner -------------------------------*/
 
 .jumbotron {
   display: flex;
+}
+
+.bufferZone {
+  display: none;
+}
+
+@media only screen and (max-width: 780px) {
+
+  .jumbotron {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .articleSection .leftBox {
+    display: none;
+  }
+
+  .bufferZone {
+    display: block;
+    height: 180px;
+    background-color: DarkGray;
+  }
+
+  .leftBox .desktop {
+    display: none;
+  }
+
 }
 
 #dark {
@@ -146,16 +211,13 @@ nav ul li {
 }
 
 .rightBox {
-  width: 423px;
+  /*width: 423px;*/
+  width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem 1rem;
   font-family: "Tahoma", sans-serif;
-}
-
-#rightBoxBanner {
-  margin-left: 2rem;
 }
 
 #rightBoxBanner h1, #rightBoxBanner p {
@@ -195,6 +257,50 @@ nav ul li {
   transform: scale(1.1);
 }
 
+@media only screen and (max-width:780px) {
+  #rightBoxBanner {
+    width: auto;
+    padding: 2rem 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #rightBoxBanner .rightBox {
+    display: flex;
+    justify-content: center;
+  }
+
+  #rightBoxBanner h1 {
+    padding: 0;
+    font-size: 2rem;
+  }
+
+  #rightBoxBanner p {
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .rightBox {
+    /*width: 100%;*/
+  }
+
+  .rightBox h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .rightBox p {
+    margin: 0;
+    margin-bottom: 0;
+  }
+
+  #button {
+    width: auto;
+  }
+}
+
+
+
 /*readMore Article Section --------------*/
 
 .leftBox .content {
@@ -228,26 +334,21 @@ nav ul li {
 
 .rightBox .image-container {
   max-width: 33%;
-  /*height: 40%;*/
 }
 
 .rightBox h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
-  padding: 0.25rem 0;
-  margin-bottom: 0.75rem;
 }
 
 .rightBox span {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 100;
   line-height: 1.4;
   color: #909090;
-  margin-bottom: 1.5rem;
 }
 
 .rightBox #link {
-  padding: 1rem 0;
   color: #4a90e2;
 }
 
@@ -258,17 +359,66 @@ nav ul li {
   transition: all 200ms ease-out 100ms;
 }
 
+.article .mobile {
+  display: none;
+}
+
 .article:hover {
-  /*transform: scale(1.05);*/
   background-color: #F0F0F0;
 }
 
-.article .content {
+.article.content {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 1rem;
-  transform: scale(1);
+  justify-content: space-around;
+  padding: 1rem 1rem;
 }
+
+@media only screen and (max-width:780px) {
+
+  #rightBoxArticles {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .article .desktop {
+    display: none;
+  }
+
+  .article .mobile {
+    display: block;
+  }
+
+  .article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rightBox .image-container {
+    max-width: 100%;
+  }
+
+  .rightBox h2 {
+    font-size: 1.4rem;
+  }
+
+  .rightBox span {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .article {
+    padding: 0.5rem 1rem;
+  }
+
+  .article .content {
+    padding: 1rem 1rem 0.25rem 1rem;
+  }
+
+
+}
+
+
 
 /* course grid -----------------------------*/
 
@@ -287,7 +437,6 @@ nav ul li {
   flex-direction: row;
   justify-content: center;
   padding: 2rem 1rem;
-  /*align-items: center;*/
 }
 
 .gridCourse {
@@ -326,8 +475,55 @@ nav ul li {
 
 }
 
+.grid .mobile {
+  display: none;
+}
+
+@media only screen and (max-width:780px) {
+
+  .grid.desktop {
+    display: none;
+  }
+
+  .grid h2 {
+    padding: 2rem 0 1rem 0;
+  }
+
+  .grid.mobile {
+    display: flex;
+    width: 100%;
+  }
+
+  .grid.mobile ul {
+    width: 100%;
+  }
+
+  .grid.mobile ul li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid.mobile ul li:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .grid.mobile h3 {
+    background-color: Gainsboro;
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
+    margin
+  }
+}
+
 
 /* thesis exhibit section -------------------*/
+.universalBanner {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 4rem 0 2rem 0;
+  width: 100%;
+  font-weight: 600;
+}
 
 .thesis#rightBoxArticles {
   justify-content: flex-start;
@@ -343,6 +539,33 @@ nav ul li {
 .thesis .content {
   padding-right: 2rem;
   justify-content: center;
+}
+
+@media only screen and (max-width:780px) {
+
+  .universalBanner {
+    padding: 2rem 0 0 0;
+  }
+
+  .leftBox.thesis {
+    width: 100%;
+    height: auto;
+  }
+
+  .thesis .content {
+    display: none;
+  }
+
+  .thesis#rightBoxArticles {
+    display: none;
+  }
+
+
+
+
+  /*.thesis .desktop {
+    display: none;
+  }*/
 }
 
 /* footer -------------------------------------*/
@@ -366,4 +589,14 @@ footer .legal {
 .legal ul li {
   display: inline;
   padding-left: 0.5rem;
+}
+
+@media only screen and (max-width: 780px) {
+  .legal ul {
+    display: none;
+  }
+
+  footer .legal {
+    justify-content: center;
+  }
 }
